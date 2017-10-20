@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: web
+  name: npapp
+spec:
+  containers:
+  - image: kbhimanavarjula/nptest:latest
+    name: web
+    env:
+    - name: peer
+      value: "mongo"
+    - name: database
+      value: "mongodb.default"
+    ports:
+    - name: np-app
+      containerPort: 8080
+    - name: habsup
+      containerPort: 9631
+    - name: mongodb
+      containerPort: 27017
+      
+
