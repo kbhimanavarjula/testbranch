@@ -6,13 +6,13 @@ metadata:
   name: npapp
 spec:
   containers:
-  - image: kbhimanavarjula/nptest:latest
+  - image: kbhimanavarjula/national-parks:latest
     name: web
-    env:
-    - name: peer
-      value: "mongo"
-    - name: database
-      value: "mongodb.default"
+    args:
+      - "--peer"
+      - "mongo" # Main command to run
+      - "--bind"
+      - "database:national-parks.default" # Args passed to that main command
     ports:
     - name: np-app
       containerPort: 8080
