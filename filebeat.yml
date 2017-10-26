@@ -182,12 +182,12 @@ filebeat:
 output:
 
   ### Elasticsearch as output
-  elasticsearch:
+ # elasticsearch:
     # Array of hosts to connect to.
     # Scheme and port can be left out and will be set to the default (http and 9200)
     # In case you specify and additional path, the scheme is required: http://localhost:9200/path
     # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
-    hosts: ["localhost:9200"]
+  #  hosts: ["localhost:9200"]
 
     # Optional protocol and basic auth credentials.
     #protocol: "https"
@@ -261,7 +261,7 @@ output:
       # If insecure is set to true, all server host names and certificates will be
       # accepted. In this mode TLS based connections are susceptible to
       # man-in-the-middle attacks. Use only for testing.
-      insecure: true
+#      insecure: true
 
       # Configure cipher suites to be used for TLS connections
       #cipher_suites: []
@@ -277,9 +277,9 @@ output:
 
 
   ### Logstash as output
-  #logstash:
+  logstash:
     # The Logstash hosts
-    hosts: ["localhost:5044"]
+    hosts: ["elkf4c6be113362.centralus.cloudapp.azure.com:5044"]
 
     # Number of workers per Logstash host.
     #worker: 1
@@ -300,9 +300,9 @@ output:
     #index: filebeat
 
     # Optional TLS. By default is off.
-    #tls:
+    tls:
       # List of root certificates for HTTPS server verifications
-      #certificate_authorities: ["/etc/pki/root/ca.pem"]
+#      certificate_authorities: ["/etc/pki/tls/certs/logstash-forwarder.crt"]
 
       # Certificate for TLS client authentication
       #certificate: "/etc/pki/client/cert.pem"
@@ -314,7 +314,7 @@ output:
       # If insecure is set to true, all server host names and certificates will be
       # accepted. In this mode TLS based connections are susceptible to
       # man-in-the-middle attacks. Use only for testing.
-      #insecure: true
+      insecure: true
 
       # Configure cipher suites to be used for TLS connections
       #cipher_suites: []
