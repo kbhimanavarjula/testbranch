@@ -279,7 +279,7 @@ output:
   ### Logstash as output
   logstash:
     # The Logstash hosts
-    hosts: ["elkf4c6be113362.centralus.cloudapp.azure.com:5044"]
+    hosts: ["localhost:5044"]
 
     # Number of workers per Logstash host.
     #worker: 1
